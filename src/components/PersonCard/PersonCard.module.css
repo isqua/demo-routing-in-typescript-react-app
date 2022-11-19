@@ -1,0 +1,23 @@
+.person {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 18px;
+    line-height: 1em;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.job {
+    margin: 0;
+}
