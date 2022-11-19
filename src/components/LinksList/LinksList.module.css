@@ -1,0 +1,35 @@
+.linkslist {
+    max-width: 150px;
+}
+
+.title {
+    font-size: inherit;
+    font-weight: bold;
+    padding: 6px 8px;
+    margin: 0 0 8px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+.item {
+    display: contents;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 8px;
+    line-height: 20px;
+    border-radius: 4px;
+}
+
+.link:hover {
+    background-color: #38bdf8;
+    color: #0c4a6e;
+}
