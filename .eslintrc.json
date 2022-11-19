@@ -1,0 +1,50 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/typescript",
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "settings": {
+        "import/extensions": [ ".ts", ".tsx" ],
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {
+                "project": "./tsconfig.json"
+            }
+        }
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true
+    },
+    "rules": {
+        "no-shadow": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [ ".tsx" ] }],
+        "import/prefer-default-export": "off",
+        "import/extensions": [ "error", "ignorePackages", {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+        }],
+        "import/no-extraneous-dependencies": [ "error", {
+            "devDependencies": ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "src/setupTests.ts"]
+        }]
+    }
+}
