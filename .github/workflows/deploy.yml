@@ -23,7 +23,7 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: build app
-        run: npm run build
+        run: npm run build && npm run gh-pages:404
         env:
           PUBLIC_URL: /demo-routing-in-typescript-react-app
       - name: upload artifact
