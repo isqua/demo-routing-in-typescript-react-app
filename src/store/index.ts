@@ -1,20 +1,27 @@
+import { PUBLIC_URL } from '../app/constants';
+
 import { events } from './events';
 import { persons } from './persons';
+
 import type {
   EventToDisplay, Person, PersonToDisplay, RealEvent,
 } from './types';
 
+function getImage(imagePath: string): string {
+  return [PUBLIC_URL, '/images', imagePath].join('/').replace(/\/+/g, '/');
+}
+
 function getPersonToDisplay(person: Person): PersonToDisplay {
   return {
     ...person,
-    avatar: `/images/persons/${person.username}.jpg`,
+    avatar: getImage(`/persons/${person.username}.jpg`),
   };
 }
 
 function getEventToDisplay(event: RealEvent): EventToDisplay {
   return {
     ...event,
-    cover: `/images/events/${event.id}.jpg`,
+    cover: getImage(`/events/${event.id}.jpg`),
   };
 }
 
