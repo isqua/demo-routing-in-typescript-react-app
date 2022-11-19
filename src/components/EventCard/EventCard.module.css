@@ -1,0 +1,19 @@
+.event {
+    width: 352px;
+    padding: 8px;
+    margin: 0 0 16px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0;
+}
+
+.cover {
+    width: 352px;
+    border: none;
+    border-radius: 8px;
+    margin-block-end: 16px;
+}
