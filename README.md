@@ -1,4 +1,30 @@
-# Getting Started with Create React App
+# Demo Routing
+
+This repository demonstrates an approach to hosting React applications on GitHub pages. This is a Single Page Application fully deployed to [https://isqua.github.io/demo-routing-in-typescript-react-app/](https://isqua.github.io/demo-routing-in-typescript-react-app/). React-router is included.
+
+If you’d like to do the same, follow these steps:
+
+1. Enable Pages Deployment. Go to your Repository Settings, then the “Pages” tab. In the section “Build and deployment” select “Source”: `GitHub Actions`.
+1. Copy the [.github/workflows/deploy.yml](./.github/workflows/deploy.yml) file from my demo repository and put it into your project to the same place: `.github/workflows/deploy.yml`.
+1. Replace the PUBLIC_URL on [the 28th line](./.github/workflows/deploy.yml#L28) with the name of your repository. Perhaps, your repository is called `game`, so you should write:
+   ```
+   PUBLIC_URL: /game
+   ```
+1. If you **don’t have** a react-router or other routing solution, change the [26th line](./.github/workflows/deploy.yml#L26) from this:
+   ```
+   run: npm run build && npm run gh-pages:404
+   ```
+   to this:
+   ```
+   run: npm run build
+   ```
+1. If you **do have** react-router or something, add [gh-pages:404](./package.json#L18) line to your `package.json` scripts section:
+   ```
+   "gh-pages:404": "cp build/index.html build/404.html"
+   ```
+1. Go to the “Actions” page of your repository, select the ”Deploy” action, and if it is green, check the `https://<owner>.github.io/<project>` page, where `<owner>` is your GitHub username and the `<project>` is the name of your repository. E.g. [https://isqua.github.io/demo-routing-in-typescript-react-app/](https://isqua.github.io/demo-routing-in-typescript-react-app/).
+
+----
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
